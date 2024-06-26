@@ -1,7 +1,9 @@
-const LeftPanelHeader = () => {
+const LeftPanelHeader = (props) => {
+  const {tittle}=props;
+
   return (
       <div >
-          <h1>Simple E-commerce</h1>
+          <h1>{tittle}</h1>
       </div>
   )
 }

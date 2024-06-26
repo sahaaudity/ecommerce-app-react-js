@@ -3,6 +3,7 @@ import { FilterSection } from "./FilterSection";
 import { LeftPanelHeader } from "./LeftPanelHeader";
 
 export function LeftPanel(){
+  const headerTittle = 'Simple ecommerce-App'
   const products = [
     {
       id: 1,
@@ -35,7 +36,7 @@ export function LeftPanel(){
   ];
   return(
     <div>
-        <LeftPanelHeader/>
+        <LeftPanelHeader tittle={headerTittle}/>
         <FilterSection></FilterSection>
         <ProductGrid products={products}></ProductGrid>
     </div>
