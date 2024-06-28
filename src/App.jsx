@@ -1,18 +1,26 @@
-import React from 'react';
-
-import { LeftPanel } from './componenets/LeftPanel/LeftPanel';
-import { RightPanel } from './componenets/RightPanel/RightPanel';
-
+import React, {  useState } from 'react';
+import { CartProvider } from './contexts';
+import { LeftPanel } from './components/LeftPanel';
+import { RightPanel } from './components/RightPanel';
 import './App.css';
 
 
 function App() {
+  // const [cart, setCart] = useState([]);
+
   return (
-    <div className="App">
-    <LeftPanel/>
-    <RightPanel/>
-      
-    </div>
+    <CartProvider  >
+      <div className="App">
+        <div className="left-pannel">
+          <LeftPanel />
+        </div>
+        <div className="right-panel">
+          <RightPanel />
+        </div>
+
+      </div>
+    </CartProvider>
+
   );
 }
 
