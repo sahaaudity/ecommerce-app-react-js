@@ -3,19 +3,27 @@
 import React, { useContext } from 'react';
 import logo from '../../logo.svg';
 import { CartContext } from '../../contexts';
-import './ProductCard.css';
+
 
 export const ProductCard = ({ product }) => {
-  const {  addToCart } = useContext(CartContext);
-
-
+  const { addToCart } = useContext(CartContext);
 
   return (
-    <div className="ProductCard">
-      <img src={logo} alt={product.name} width="200px" />
-      <h2>{product.name}</h2>
-      <p>${product.price}</p>
-      <button onClick={()=>addToCart(product)}>Add to Cart</button>
+    <div className="bg-white p-4 rounded shadow">
+      <img
+        className="w-full mb-4"
+        src={logo}
+        alt="Product image"
+        width="200px"
+      />
+      <p className="text-lg font-semibold">{product.name}</p>
+      <p className="text-gray-700">{`$${product.price}`}</p>
+      <button
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2"
+        onClick={() => addToCart(product)}
+      >
+        Add to Cart
+      </button>
     </div>
   );
 };
